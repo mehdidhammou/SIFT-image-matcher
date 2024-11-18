@@ -30,8 +30,3 @@ def resize_images_to_1080p(input_folder):
                 print(f"Image {file_name} is already 1080p or smaller.")
         except Exception as e:
             print(f"An error occurred with {file_name}: {e}")
-
-
-# Replace 'path_to_your_folder' with the path to your folder containing images
-folder_path = "dataset/test"
-resize_images_to_1080p(folder_path)
