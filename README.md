@@ -1,4 +1,4 @@
-# Image Matching Project
+# SIFT Image matcher
 
 ## Overview
 A Python-based image matching application using OpenCV's SIFT (Scale-Invariant Feature Transform) algorithm to find similar images in a training dataset.
