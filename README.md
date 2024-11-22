@@ -1,21 +1,55 @@
-# SIFT image matcher
+# Image Matching Project
 
-This is a simple image matcher using SIFT (Scale-Invariant Feature Transform) algorithm. implemented in Python using OpenCV library.
+## Overview
+A Python-based image matching application using OpenCV's SIFT (Scale-Invariant Feature Transform) algorithm to find similar images in a training dataset.
+
+## Features
+- SIFT feature detection and description
+- Brute-force matching of image features
+- Serialization of trained image data
+- Configurable SIFT parameters
+- Interactive image selection and matching
 
 ## Requirements
+- Python 3.8+
+- OpenCV
+- Pickle
 
+## Installation
 ```bash
 pip install -r requirements.txt
 ```
 
-## Explanation
-
-1. Split your image into two parts. `dataset/train` part will be used as the reference image, where for each image, `keypoints` and `descriptors`.
-
-2. `dataset/test` part will be used as the search space for the closest target image.
+## Configuration
+Modify `config.py` to set:
+- `TRAIN_DATASET_PATH`: Path to training images
+- `TEST_DATASET_PATH`: Path to test images
+- `MAX_MATCH_DISTANCE`: Maximum distance for feature matching
+- `ACCEPTED_EXTENSIONS`: Supported image file types
 
 ## Usage
-
 ```bash
-python src/main.py
+python main.py [--clean] [--contrastThreshold VALUE] [--edgeThreshold VALUE]
 ```
+
+### Command Line Arguments
+- `--clean`: Force retraining of images
+- `--contrastThreshold`: SIFT contrast threshold
+- `--edgeThreshold`: SIFT edge threshold
+
+## How It Works
+1. Load and train images from training dataset
+2. Detect SIFT keypoints and descriptors
+3. Display test images for selection
+4. Match selected image against trained images
+5. Display top matching results
+
+## Contributing
+1. Fork the repository
+2. Create your feature branch
+3. Commit changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+MIT License
